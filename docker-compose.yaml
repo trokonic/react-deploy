@@ -1,0 +1,13 @@
+
+version: '3.8'
+
+services:
+  react-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: react_web_app
+    ports:
+      - "5174:80"
+    restart: always
+
