@@ -2,12 +2,14 @@
 version: '3.8'
 
 services:
-  react-app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: react_web_app
+  web:
+    build: .
     ports:
-      - "5174:80"
-    restart: always
+      - "5174:5174"
+     
+    volumes:
+      - .:/app
+      - /app/node-modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
 
